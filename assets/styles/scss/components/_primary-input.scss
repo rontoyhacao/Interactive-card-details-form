@@ -1,0 +1,20 @@
+.primary-input {
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid $Light-grayish-violet;
+  width: 100%;
+  box-sizing: border-box;
+  color: $Very-dark-violet;
+  font-size: 1rem;
+  &:hover {
+    border-color: $Very-dark-violet;
+  }
+  &--error {
+    border-color: $Dark-orange;
+  }
+}
+
+.input-error {
+  color: $Dark-orange;
+  margin-top: 0.5rem;
+}

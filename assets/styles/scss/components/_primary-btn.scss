@@ -1,0 +1,13 @@
+.primary-btn {
+  padding: 1rem;
+  border: none;
+  width: 100%;
+  background-color: $Very-dark-violet;
+  color: $White;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  transition: filter 0.2s;
+  &:hover {
+    filter: brightness(90%);
+  }
+}

@@ -1,0 +1,297 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(0deg, 0%, 100%);
+  background-image: url(/assets/images/bg-main-mobile.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+* {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+label {
+  color: hsl(278deg, 68%, 11%);
+  letter-spacing: 0.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: hsl(278deg, 68%, 11%);
+}
+
+p {
+  color: hsl(279deg, 6%, 55%);
+}
+
+.card {
+  height: 9.875rem;
+  width: 18rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  color: hsl(0deg, 0%, 100%);
+  position: relative;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.card-front {
+  background-image: url(/assets/images/bg-card-front.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-front__card-number {
+  letter-spacing: 0.2rem;
+}
+.card-front__card-details-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-back {
+  background-image: url(/assets/images/bg-card-back.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+.card-back__cvc {
+  position: absolute;
+  top: 4.5rem;
+  right: 2rem;
+}
+
+.primary-input {
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid hsl(270deg, 3%, 87%);
+  width: 100%;
+  box-sizing: border-box;
+  color: hsl(278deg, 68%, 11%);
+  font-size: 1rem;
+}
+.primary-input:hover {
+  border-color: hsl(278deg, 68%, 11%);
+}
+.primary-input--error {
+  border-color: hsl(16deg, 100%, 50%);
+}
+
+.input-error {
+  color: hsl(16deg, 100%, 50%);
+  margin-top: 0.5rem;
+}
+
+.primary-btn {
+  padding: 1rem;
+  border: none;
+  width: 100%;
+  background-color: hsl(278deg, 68%, 11%);
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  transition: filter 0.2s;
+}
+.primary-btn:hover {
+  filter: brightness(90%);
+}
+
+.main-wrapper {
+  width: 92%;
+  margin: 0 auto;
+  max-width: 70rem;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-top: 2rem;
+}
+.card-container .card-front {
+  top: -4.2rem;
+  z-index: 1;
+}
+.card-container .card-back {
+  margin-left: auto;
+}
+
+.payment-form {
+  top: -1rem;
+  position: relative;
+}
+.payment-form .payment-form-container .expiry-cvc-wrapper {
+  display: flex;
+}
+.payment-form .payment-form-container .expiry-cvc-wrapper .expiry-input-wrapper {
+  margin-right: 0.5rem;
+  width: 60%;
+}
+.payment-form .payment-form-container .expiry-cvc-wrapper .expiry-input-wrapper .expiry-input {
+  display: flex;
+  flex-direction: column;
+}
+.payment-form .payment-form-container .expiry-cvc-wrapper .expiry-input-wrapper .expiry-input .month-year-exp-wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+.payment-form .payment-form-container .expiry-cvc-wrapper .cvc-input-wrapper {
+  width: 40%;
+}
+
+.input-wrapper {
+  margin-bottom: 1rem;
+}
+
+.complete-container {
+  text-align: center;
+  padding-bottom: 3rem;
+}
+.complete-container .thank-you {
+  margin: 2rem 0 1rem;
+}/*# sourceMappingURL=main.css.map */

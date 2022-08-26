@@ -1,0 +1,12 @@
+.card-container {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-top: 2rem;
+  .card-front {
+    top: -4.2rem;
+    z-index: 1;
+  }
+  .card-back {
+    margin-left: auto;
+  }
+}

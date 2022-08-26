@@ -1,0 +1,28 @@
+.payment-form {
+  top: -1rem;
+  position: relative;
+  .payment-form-container {
+    .expiry-cvc-wrapper {
+      display: flex;
+      .expiry-input-wrapper {
+        margin-right: 0.5rem;
+        width: 60%;
+        .expiry-input {
+          display: flex;
+          flex-direction: column;
+          .month-year-exp-wrapper {
+            display: flex;
+            gap: 0.5rem;
+          }
+        }
+      }
+      .cvc-input-wrapper {
+        width: 40%;
+      }
+    }
+  }
+}
+
+.input-wrapper {
+  margin-bottom: 1rem;
+}
