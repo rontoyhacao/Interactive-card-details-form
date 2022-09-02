@@ -219,13 +219,51 @@ p {
 .primary-input:hover {
   border-color: hsl(278deg, 68%, 11%);
 }
-.primary-input--error {
+.primary-input:focus {
+  outline: none;
+}
+
+.has-error {
   border-color: hsl(16deg, 100%, 50%);
 }
 
+.is-valid {
+  border-color: hsl(101deg, 45%, 45%);
+}
+
 .input-error {
+  display: none;
   color: hsl(16deg, 100%, 50%);
   margin-top: 0.5rem;
+}
+
+.active {
+  display: block;
+}
+
+.cardnumber-input-wrapper .cardnumber-input .cardnumber-network-wrapper {
+  position: relative;
+}
+.cardnumber-input-wrapper .cardnumber-input .cardnumber-network-wrapper .card-network-wrapper {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+.cardnumber-input-wrapper .cardnumber-input .cardnumber-network-wrapper .card-network-wrapper .card-network-container {
+  display: inline-block;
+  width: 32px;
+  margin-left: 2px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+.cardnumber-input-wrapper .cardnumber-input .cardnumber-network-wrapper .card-network-wrapper .hidden {
+  width: 0;
+  opacity: 0;
+  margin-left: 0;
 }
 
 .primary-btn {

@@ -45,9 +45,11 @@
               />
             </svg>
           </div>
-          <div class="card-front__card-number">0000 0000 0000 0000</div>
+          <div id="cardnumber-text" class="card-front__card-number">
+            0000 0000 0000 0000
+          </div>
           <div class="card-front__card-details-wrapper">
-            <div class="card-holder-js">Jane Appleseed</div>
+            <div id="cardholder-text">JANE APPLESEED</div>
             <div class="card-expiry-js">00/00</div>
           </div>
         </div>
@@ -57,7 +59,7 @@
       </div>
 
       <div class="payment-form">
-        <form action="#" method="post">
+        <form id="payment-form" action="#" method="post">
           <div class="payment-form-container">
             <div class="input-wrapper cardholder-input-wrapper">
               <div class="cardholder-input">
@@ -68,7 +70,7 @@
                   name="cardholder"
                   id="cc-name"
                   autocomplete="cc-name"
-                  pattern="[\p{L} \-\.]+"
+                  maxlength="64"
                   placeholder="e.g. Jane Appleseed"
                   required
                 />
@@ -78,17 +80,32 @@
             <div class="input-wrapper cardnumber-input-wrapper">
               <div class="cardnumber-input">
                 <label for="cc-number">CARD NUMBER</label>
-                <input
-                  class="primary-input"
-                  type="tel"
-                  name="cardnumber"
-                  id="cc-number"
-                  autocomplete="cc-number"
-                  pattern="[\d ]{10,30}"
-                  maxlength="16"
-                  placeholder="e.g. 1234 5678 9123 0000"
-                  required
-                />
+                <div class="cardnumber-network-wrapper">
+                  <input
+                    class="primary-input"
+                    type="tel"
+                    name="cardnumber"
+                    id="cc-number"
+                    autocomplete="cc-number"
+                    maxlength="16"
+                    placeholder="e.g. 1234 5678 9123 0000"
+                    required
+                  />
+                  <div class="card-network-wrapper">
+                    <div class="card-network-container">
+                      <img src="./assets/images/AmEx.png" alt="Amex" />
+                    </div>
+                    <div class="card-network-container">
+                      <img
+                        src="./assets/images/Mastercard.png"
+                        alt="Mastercard"
+                      />
+                    </div>
+                    <div class="card-network-container">
+                      <img src="./assets/images/Visa.png" alt="Visa" />
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="input-error"></div>
             </div>
@@ -140,7 +157,9 @@
               </div>
             </div>
           </div>
-          <button type="submit" class="primary-btn">Confirm</button>
+          <button id="confirm-payment" type="submit" class="primary-btn">
+            Confirm
+          </button>
         </form>
 
         <!-- <div class="complete-state">
@@ -183,5 +202,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+    <script src="./assets/scripts/main.js" type="module"></script>
   </body>
 </html>

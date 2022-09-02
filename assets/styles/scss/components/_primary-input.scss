@@ -9,12 +9,49 @@
   &:hover {
     border-color: $Very-dark-violet;
   }
-  &--error {
-    border-color: $Dark-orange;
+  &:focus {
+    outline: none;
   }
 }
 
+.has-error {
+  border-color: $Dark-orange;
+}
+
+.is-valid {
+  border-color: $Green;
+}
+
 .input-error {
+  display: none;
   color: $Dark-orange;
   margin-top: 0.5rem;
+}
+.active {
+  display: block;
+}
+
+.cardnumber-input-wrapper .cardnumber-input .cardnumber-network-wrapper {
+  position: relative;
+  .card-network-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.25s ease;
+    .card-network-container {
+      display: inline-block;
+      width: 32px;
+      margin-left: 2px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+    }
+    .hidden {
+      width: 0;
+      opacity: 0;
+      margin-left: 0;
+    }
+  }
 }
