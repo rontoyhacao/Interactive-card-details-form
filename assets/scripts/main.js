@@ -1,5 +1,6 @@
 import { validateCardName } from './fields/cardName.js';
 import { validateCardNumber, checkCardNumber } from './fields/cardNumber.js';
+import { validateMonthExpiry } from './fields/cardExpiry.js';
 
 export const showInputError = function (
   inputFieldElement,
@@ -46,3 +47,13 @@ document
 document
   .querySelector(`#cc-number`)
   .addEventListener(`focusout`, checkCardNumber);
+
+// * validate card month expiry on input
+document
+  .querySelector(`#cc-exp-month`)
+  .addEventListener(`input`, validateMonthExpiry);
+
+// * validate card month expiry on focusout
+document
+  .querySelector(`#cc-exp-month`)
+  .addEventListener(`focusout`, validateMonthExpiry);

@@ -81,19 +81,18 @@ export const validateCardNumber = function (e) {
   const cards = [
     {
       network: 'Visa',
-      length: '16',
-      prefixes: '4',
-      checkdigit: true,
+      length: 16,
+      prefixes: [4],
     },
     {
       network: 'Mastercard',
-      length: '16',
-      prefixes: '51,52,53,54,55',
-      checkdigit: true,
+      length: 16,
+      prefixes: [51, 52, 53, 54, 55],
     },
-    { network: 'AmEx', length: '15', prefixes: '34,37', checkdigit: true },
+    { network: 'AmEx', length: 15, prefixes: [34, 37] },
   ];
 
+  // * check if the card number input field element is empty
   if (cardNumberInputFieldElement.value.trim() === ``) {
     showInputError(
       cardNumberInputFieldElement,
@@ -109,16 +108,19 @@ export const validateCardNumber = function (e) {
 
     validCardNumber = false;
   } else {
+    // * the following blocks of code is to verify if the entered card number by the user is a valid card number by checking if its prefix (first two digits) matches the prefix of the given credit card networks from the array: American Express (starts with 34 or 37), Visa (4), and Mastercard (51, 52, 53, 54, 55).
+
+    // * check if the entered value in the card number input field element only contains numbers
     if (/^[0-9]+$/.test(cardNumberInputFieldElement.value)) {
       let lengthValid = false;
       let prefixValid = false;
-      let cardNetwork = ``;
+      let cardNetwork;
 
-      // * loop over the cards array to test the entered card number
+      // * loop over the cards array to test the entered card number prefix
       for (let i = 0; i < cards.length; i++) {
-        const selectedCardPrefixes = cards[i].prefixes.split(`,`);
+        const selectedCardPrefixes = cards[i].prefixes;
 
-        // * loop over the prefixes of the currently selected card from the array to test the entered card number's prefix
+        // * loop over the prefix array of the currently selected card from the array to test the entered card number's prefix
         for (let j = 0; j < selectedCardPrefixes.length; j++) {
           const formulatedPrefixRegEx = new RegExp(
             `^` + selectedCardPrefixes[j]
@@ -127,9 +129,12 @@ export const validateCardNumber = function (e) {
             prefixValid = true;
           }
         }
+        // * the following blocks of code will check if the length of the entered card number matches the length of the matched prefix card network
+
+        // * if the prefix of the entered card number matches a card network prefix
         if (prefixValid) {
-          hideInputError(cardNumberInputFieldElement, errorTextElement);
           cardNetwork = cards[i].network;
+          hideInputError(cardNumberInputFieldElement, errorTextElement);
           hideValidField(cardNumberInputFieldElement);
           showCardNetwork(cardNetwork);
           displayCardNumber(cardNetwork, cardNumberInputFieldElement);
@@ -140,7 +145,8 @@ export const validateCardNumber = function (e) {
                 const selectedCardLength = cards[i].length;
 
                 if (
-                  cardNumberInputFieldElement.value.length == selectedCardLength
+                  cardNumberInputFieldElement.value.length ===
+                  selectedCardLength
                 ) {
                   lengthValid = true;
                 }
@@ -154,7 +160,6 @@ export const validateCardNumber = function (e) {
               hideValidField(cardNumberInputFieldElement);
             }
           }
-          // console.log(validCardNumber);
           return validCardNumber;
         } else {
           // * if card number entered does not belong to the three card networks
@@ -177,7 +182,6 @@ export const validateCardNumber = function (e) {
       hideValidField(cardNumberInputFieldElement);
       validCardNumber = false;
     }
-    // console.log(validCardNumber);
     return validCardNumber;
   }
 };
