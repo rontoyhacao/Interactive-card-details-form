@@ -4,4 +4,12 @@
   .thank-you {
     margin: 2rem 0 1rem;
   }
+  svg {
+    overflow: visible !important;
+    width: 20em;
+
+    path {
+      transform-origin: 50% 50%;
+    }
+  }
 }

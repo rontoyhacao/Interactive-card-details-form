@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+@import '/node_modules/animate.css/animate.css';
 html {
   box-sizing: border-box;
 }
@@ -326,10 +327,25 @@ p {
   margin-bottom: 1rem;
 }
 
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .complete-container {
   text-align: center;
   padding-bottom: 3rem;
 }
 .complete-container .thank-you {
   margin: 2rem 0 1rem;
+}
+.complete-container svg {
+  overflow: visible !important;
+  width: 20em;
+}
+.complete-container svg path {
+  transform-origin: 50% 50%;
 }/*# sourceMappingURL=main.css.map */

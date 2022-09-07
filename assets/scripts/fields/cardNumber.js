@@ -5,7 +5,20 @@ import {
   hideValidField,
 } from '../main.js';
 
-let validCardNumber = false;
+export let cardNumberInputFieldElement = document.querySelector(`#cc-number`);
+let cardNumberTextElement = document.querySelector(`#cardnumber-text`);
+
+export let validCardNumber = false;
+export let cardNetwork;
+
+export const resetCardNumber = function () {
+  validCardNumber = false;
+  cardNetwork = undefined;
+  resetShowCardNetwork();
+  cardNumberInputFieldElement.value = ``;
+  hideValidField(cardNumberInputFieldElement);
+  cardNumberTextElement.textContent = `0000 0000 0000 0000`;
+};
 
 // * display card network on input
 const showCardNetwork = function (cardNetwork) {
@@ -70,13 +83,11 @@ const resetShowCardNetwork = function () {
     });
 };
 
-export const validateCardNumber = function (e) {
-  let cardNumberInputFieldElement = e.target;
+export const validateCardNumber = function () {
   let errorTextElement =
     cardNumberInputFieldElement.parentNode.parentNode.nextElementSibling;
 
-  document.querySelector(`#cardnumber-text`).textContent =
-    cardNumberInputFieldElement.value;
+  cardNumberTextElement.textContent = cardNumberInputFieldElement.value;
 
   const cards = [
     {
@@ -102,9 +113,7 @@ export const validateCardNumber = function (e) {
     resetShowCardNetwork();
     hideValidField(cardNumberInputFieldElement);
 
-    document.querySelector(
-      `#cardnumber-text`
-    ).textContent = `0000 0000 0000 0000`;
+    cardNumberTextElement.textContent = `0000 0000 0000 0000`;
 
     validCardNumber = false;
   } else {
@@ -114,7 +123,6 @@ export const validateCardNumber = function (e) {
     if (/^[0-9]+$/.test(cardNumberInputFieldElement.value)) {
       let lengthValid = false;
       let prefixValid = false;
-      let cardNetwork;
 
       // * loop over the cards array to test the entered card number prefix
       for (let i = 0; i < cards.length; i++) {
@@ -186,8 +194,8 @@ export const validateCardNumber = function (e) {
   }
 };
 
-export const checkCardNumber = function (e) {
-  let cardNumberInputFieldElement = e.target;
+export const checkCardNumber = function () {
+  let cardNumberInputFieldElement = document.querySelector(`#cc-number`);
   let errorTextElement =
     cardNumberInputFieldElement.parentNode.parentNode.nextElementSibling;
 
@@ -201,10 +209,7 @@ export const checkCardNumber = function (e) {
     hideValidField(cardNumberInputFieldElement);
 
     validCardNumber = false;
-  }
-  if (validCardNumber === true) {
-    showValidField(cardNumberInputFieldElement);
-  } else {
+  } else if (!validCardNumber) {
     showInputError(
       cardNumberInputFieldElement,
       errorTextElement,

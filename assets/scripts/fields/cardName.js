@@ -5,10 +5,19 @@ import {
   hideValidField,
 } from '../main.js';
 
-let validName;
+export let cardNameInputFieldElement = document.querySelector(`#cc-name`);
+let cardNameTextElement = document.querySelector(`#cardholder-text`);
 
-export const validateCardName = function (e) {
-  let cardNameInputFieldElement = e.target;
+export let validName;
+
+export const resetCardName = function () {
+  validName = undefined;
+  cardNameInputFieldElement.value = ``;
+  hideValidField(cardNameInputFieldElement);
+  cardNameTextElement.textContent = `JANE APPLESEED`;
+};
+
+export const validateCardName = function () {
   let errorTextElement =
     cardNameInputFieldElement.parentNode.nextElementSibling;
 
@@ -22,6 +31,9 @@ export const validateCardName = function (e) {
       `Please enter a name`
     );
     hideValidField(cardNameInputFieldElement);
+
+    cardNameTextElement.textContent = `JANE APPLESEED`;
+
     validName = false;
   } else {
     if (/^[A-Za-z\s]+$/.test(cardNameInputFieldElement.value.trim())) {
