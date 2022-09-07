@@ -1,4 +1,5 @@
-import anime from '/node_modules/animejs/lib/anime.es.js';
+// import anime from '/node_modules/animejs/lib/anime.es.js';
+// import anime from 'animejs';
 export const timeline = anime.timeline();
 
 const container = document.getElementById('container');
