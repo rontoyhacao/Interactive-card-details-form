@@ -1,0 +1,23 @@
+{
+  "name": "interactive-card-details-form-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Interactive card details form coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "compile": "sass --watch --no-source-map assets/styles/scss:assets/styles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rontoyhacao/Interactive-card-details-form.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rontoyhacao/Interactive-card-details-form/issues"
+  },
+  "homepage": "https://github.com/rontoyhacao/Interactive-card-details-form#readme",
+  "dependencies": {
+    "sass": "^1.54.9"
+  }
+}
