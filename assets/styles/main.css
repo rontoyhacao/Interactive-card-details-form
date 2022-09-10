@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 html {
   box-sizing: border-box;
 }
@@ -136,7 +136,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -150,7 +150,7 @@ button {
 }
 
 * {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 label {
@@ -176,7 +176,8 @@ p {
   box-sizing: border-box;
   color: hsl(0deg, 0%, 100%);
   position: relative;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
 
 .card-front {
@@ -244,7 +245,10 @@ p {
 .cardnumber-input-wrapper .cardnumber-input .cardnumber-network-wrapper {
   position: relative;
 }
-.cardnumber-input-wrapper .cardnumber-input .cardnumber-network-wrapper .card-network-wrapper {
+.cardnumber-input-wrapper
+  .cardnumber-input
+  .cardnumber-network-wrapper
+  .card-network-wrapper {
   position: absolute;
   top: 50%;
   right: 1rem;
@@ -253,14 +257,22 @@ p {
   opacity: 1;
   transition: opacity 0.25s ease;
 }
-.cardnumber-input-wrapper .cardnumber-input .cardnumber-network-wrapper .card-network-wrapper .card-network-container {
+.cardnumber-input-wrapper
+  .cardnumber-input
+  .cardnumber-network-wrapper
+  .card-network-wrapper
+  .card-network-container {
   display: inline-block;
   width: 32px;
   margin-left: 2px;
   overflow: hidden;
   transition: all 0.25s ease;
 }
-.cardnumber-input-wrapper .cardnumber-input .cardnumber-network-wrapper .card-network-wrapper .hidden {
+.cardnumber-input-wrapper
+  .cardnumber-input
+  .cardnumber-network-wrapper
+  .card-network-wrapper
+  .hidden {
   width: 0;
   opacity: 0;
   margin-left: 0;
@@ -306,15 +318,27 @@ p {
 .payment-form .payment-form-container .expiry-cvc-wrapper {
   display: flex;
 }
-.payment-form .payment-form-container .expiry-cvc-wrapper .expiry-input-wrapper {
+.payment-form
+  .payment-form-container
+  .expiry-cvc-wrapper
+  .expiry-input-wrapper {
   margin-right: 0.5rem;
   width: 60%;
 }
-.payment-form .payment-form-container .expiry-cvc-wrapper .expiry-input-wrapper .expiry-input {
+.payment-form
+  .payment-form-container
+  .expiry-cvc-wrapper
+  .expiry-input-wrapper
+  .expiry-input {
   display: flex;
   flex-direction: column;
 }
-.payment-form .payment-form-container .expiry-cvc-wrapper .expiry-input-wrapper .expiry-input .month-year-exp-wrapper {
+.payment-form
+  .payment-form-container
+  .expiry-cvc-wrapper
+  .expiry-input-wrapper
+  .expiry-input
+  .month-year-exp-wrapper {
   display: flex;
   gap: 0.5rem;
 }

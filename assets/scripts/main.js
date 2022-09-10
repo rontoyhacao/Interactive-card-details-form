@@ -88,10 +88,7 @@ cardMonthExpiryInputFieldElement.addEventListener(
 cardYearExpiryInputFieldElement.addEventListener(`input`, validateYearExpiry);
 
 // * validate card year expiry on focusout
-cardYearExpiryInputFieldElement.addEventListener(
-  `focusout`,
-  validateYearExpiry
-);
+cardCvcInputFieldElement.addEventListener(`input`, validateCvc);
 
 // * validate card cvc on input
 cardCvcInputFieldElement.addEventListener(`input`, validateCvc);
