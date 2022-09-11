@@ -1,12 +1,25 @@
+@use '../abstracts/variables';
+@use '../../../../node_modules/sass-mq/mq';
+
 .card {
   height: 9.875rem;
   width: 18rem;
   padding: 1rem;
   box-sizing: border-box;
-  color: $White;
+  color: variables.$White;
   position: relative;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
     rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  border-radius: 0.5rem;
+  @include mq.mq($from: tablet) {
+    height: 11.85rem;
+    width: 21.6rem;
+  }
+  @include mq.mq($from: desktop) {
+    height: 15.642rem;
+    width: 28.512rem;
+    padding: 2rem;
+  }
 }
 
 .card-front {
@@ -16,10 +29,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  //   position: absolute;
-  //   z-index: 1;
   &__card-number {
     letter-spacing: 0.2rem;
+    @include mq.mq($from: desktop) {
+      font-size: 1.8rem;
+    }
   }
   &__card-details-wrapper {
     display: flex;
@@ -36,5 +50,13 @@
     position: absolute;
     top: 4.5rem;
     right: 2rem;
+    @include mq.mq($from: tablet) {
+      top: 5.5rem;
+      right: 2.2rem;
+    }
+    @include mq.mq($from: desktop) {
+      top: 7.2rem;
+      right: 3rem;
+    }
   }
 }

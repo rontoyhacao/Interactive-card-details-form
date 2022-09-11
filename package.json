@@ -18,9 +18,10 @@
   },
   "homepage": "https://github.com/rontoyhacao/Interactive-card-details-form#readme",
   "dependencies": {
-    "sass": "^1.54.9"
+    "sass-mq": "^6.0.0"
   },
   "devDependencies": {
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "sass": "^1.54.9"
   }
 }

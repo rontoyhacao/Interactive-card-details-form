@@ -1,14 +1,12 @@
-@import './abstracts/mixins';
-@import './abstracts/variables';
+@forward './base/breakpoints';
+@forward './base/reset';
+@forward './base/typography';
 
-@import './base/reset';
-@import './base/typography';
+@forward './components/card';
+@forward './components/primary-input';
+@forward './components/primary-btn';
 
-@import './components/card';
-@import './components/primary-input';
-@import './components/primary-btn';
-
-@import './layout/main-wrapper';
-@import './layout/card-container';
-@import './layout/payment-form';
-@import './layout/complete-state';
+@forward './layout/main-wrapper';
+@forward './layout/card-container';
+@forward './layout/payment-form';
+@forward './layout/complete-state';

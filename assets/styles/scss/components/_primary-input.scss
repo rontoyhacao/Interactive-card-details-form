@@ -1,13 +1,15 @@
+@use '../abstracts/variables';
+
 .primary-input {
   padding: 1rem;
   border-radius: 0.8rem;
-  border: 1px solid $Light-grayish-violet;
+  border: 1px solid variables.$Light-grayish-violet;
   width: 100%;
   box-sizing: border-box;
-  color: $Very-dark-violet;
+  color: variables.$Very-dark-violet;
   font-size: 1rem;
   &:hover {
-    border-color: $Very-dark-violet;
+    border-color: variables.$Very-dark-violet;
   }
   &:focus {
     outline: none;
@@ -15,16 +17,16 @@
 }
 
 .has-error {
-  border-color: $Dark-orange;
+  border-color: variables.$Dark-orange;
 }
 
 .is-valid {
-  border-color: $Green;
+  border-color: variables.$Green;
 }
 
 .input-error {
   display: none;
-  color: $Dark-orange;
+  color: variables.$Dark-orange;
   margin-top: 0.5rem;
 }
 .active {

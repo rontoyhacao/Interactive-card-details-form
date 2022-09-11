@@ -1,12 +1,37 @@
+@use '../../../../node_modules/sass-mq/mq';
+
 .card-container {
   display: flex;
   flex-direction: column-reverse;
   padding-top: 2rem;
+  @include mq.mq($from: mobileLandscape) {
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+  }
+  @include mq.mq($from: desktop) {
+    flex-direction: column;
+    width: 50%;
+    padding: initial;
+    gap: 2rem;
+  }
   .card-front {
     top: -4.2rem;
     z-index: 1;
+    @include mq.mq($from: mobileLandscape) {
+      top: 5rem;
+    }
+    @include mq.mq($from: desktop) {
+      top: initial;
+    }
   }
   .card-back {
     margin-left: auto;
+    @include mq.mq($from: mobileLandscape) {
+      margin: 0;
+    }
+    @include mq.mq($from: desktop) {
+      align-self: flex-end;
+    }
   }
 }

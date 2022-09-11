@@ -1,15 +1,22 @@
-.complete-container {
-  text-align: center;
-  padding-bottom: 3rem;
-  .thank-you {
-    margin: 2rem 0 1rem;
-  }
-  svg {
-    overflow: visible !important;
-    width: 20em;
+@use '../../../../node_modules/sass-mq/mq';
 
-    path {
-      transform-origin: 50% 50%;
+.complete-state {
+  @include mq.mq($from: desktop) {
+    padding: 0 6rem;
+  }
+  .complete-container {
+    text-align: center;
+    padding-bottom: 3rem;
+    .thank-you {
+      margin: 2rem 0 1rem;
+    }
+    svg {
+      overflow: visible !important;
+      width: 20em;
+
+      path {
+        transform-origin: 50% 50%;
+      }
     }
   }
 }

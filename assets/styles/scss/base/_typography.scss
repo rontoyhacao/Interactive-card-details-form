@@ -1,3 +1,4 @@
+@use '../abstracts/variables';
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 
 * {
@@ -5,7 +6,7 @@
 }
 
 label {
-  color: $Very-dark-violet;
+  color: variables.$Very-dark-violet;
   letter-spacing: 0.1rem;
   display: block;
   margin-bottom: 0.5rem;
@@ -13,9 +14,9 @@ label {
 
 h2 {
   font-size: 2rem;
-  color: $Very-dark-violet;
+  color: variables.$Very-dark-violet;
 }
 
 p {
-  color: $Dark-grayish-violet;
+  color: variables.$Dark-grayish-violet;
 }

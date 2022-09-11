@@ -2,17 +2,29 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@use '../abstracts/variables';
+@use '../../../../node_modules/sass-mq/mq';
 
 html {
   box-sizing: border-box;
 }
 
 body {
-  background-color: $White;
+  background-color: variables.$White;
   background-image: url(/assets/images/bg-main-mobile.png);
   background-repeat: no-repeat;
   background-size: 100%;
-  //   @include wide-container;
+  @include mq.mq($from: mobile) {
+    background-size: 100% 240px;
+  }
+  @include mq.mq($from: desktop) {
+    background-image: url(/assets/images/bg-main-desktop.png);
+    background-size: contain;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 html,

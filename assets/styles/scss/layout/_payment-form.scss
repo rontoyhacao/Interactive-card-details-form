@@ -1,23 +1,37 @@
+@use '../../../../node_modules/sass-mq/mq';
+
 .payment-form {
   top: -1rem;
   position: relative;
-  .payment-form-container {
-    .expiry-cvc-wrapper {
-      display: flex;
-      .expiry-input-wrapper {
-        margin-right: 0.5rem;
-        width: 60%;
-        .expiry-input {
-          display: flex;
-          flex-direction: column;
-          .month-year-exp-wrapper {
+  @include mq.mq($from: mobileLandscape) {
+    top: 8rem;
+  }
+  @include mq.mq($from: desktop) {
+    top: initial;
+    width: 50%;
+  }
+  form {
+    @include mq.mq($from: desktop) {
+      padding: 0 6rem;
+    }
+    .payment-form-container {
+      .expiry-cvc-wrapper {
+        display: flex;
+        .expiry-input-wrapper {
+          margin-right: 0.5rem;
+          width: 60%;
+          .expiry-input {
             display: flex;
-            gap: 0.5rem;
+            flex-direction: column;
+            .month-year-exp-wrapper {
+              display: flex;
+              gap: 0.5rem;
+            }
           }
         }
-      }
-      .cvc-input-wrapper {
-        width: 40%;
+        .cvc-input-wrapper {
+          width: 40%;
+        }
       }
     }
   }
