@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/mobilefirst-intro-section-with-dropdown-navigation-RKEu9Cs1Dr](https://www.frontendmentor.io/solutions/mobilefirst-intro-section-with-dropdown-navigation-RKEu9Cs1Dr)
+- Solution URL: [https://www.frontendmentor.io/solutions/mobilefirst-interactive-card-details-form-eZRDYrDrlN](https://www.frontendmentor.io/solutions/mobilefirst-interactive-card-details-form-eZRDYrDrlN)
 - Live Site URL: [https://interactive-card-details-form-rontoyhacao.vercel.app/](https://interactive-card-details-form-rontoyhacao.vercel.app/)
 
 ## My process
