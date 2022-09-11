@@ -11,6 +11,6 @@ $breakpoints: (
 // $show-breakpoints: (mobile, mobileLandscape, tablet, desktop, wide);
 
 @use '../../../../node_modules/sass-mq/mq' with (
-  $breakpoints: $breakpoints,
-  // $show-breakpoints: $show-breakpoints
-);
+    $breakpoints: $breakpoints,
+    // $show-breakpoints: $show-breakpoints
+  );
